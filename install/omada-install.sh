@@ -36,16 +36,13 @@ wget -qL https://repo.mongodb.org/apt/ubuntu/dists/bionic/mongodb-org/3.6/multiv
 $STD dpkg -i mongodb-org-server_3.6.23_amd64.deb
 msg_ok "Installed MongoDB"
 
-latest_url=$('https://static.tp-link.com/upload/beta/2023/202309/20230904/Omada_SDN_Controller_v5.12.6_Linux_x64.deb(Beta).zip')
-latest_version=$('beta 5.12.6')
-
-msg_info "Installing Omada Controller ${latest_version}"
-wget -qL ${latest_url}
+msg_info "Installing Omada Controller"
+wget -qL 'https://static.tp-link.com/upload/beta/2023/202309/20230904/Omada_SDN_Controller_v5.12.6_Linux_x64.deb(Beta).zip'
 unzip 'omada_v5.12.6_linux_x64_20230822180516.deb'
 $STD dpkg -i omada_v5.12.6_linux_x64_20230822180516.deb
 echo "bash -c \"\$(wget -qLO - https://github.com/mainkowitsch/Proxmox/raw/main/ct/${app}.sh)\"" >/usr/bin/update
 chmod +x /usr/bin/update
-msg_ok "Installed Omada Controller ${latest_version}"
+msg_ok "Installed Omada Controller"
 
 motd_ssh
 customize
