@@ -38,7 +38,7 @@ msg_ok "Installed MongoDB"
 
 msg_info "Installing Omada Controller"
 wget -qL 'https://static.tp-link.com/upload/beta/2023/202309/20230904/Omada_SDN_Controller_v5.12.6_Linux_x64.deb(Beta).zip'
-unzip 'omada_v5.12.6_linux_x64_20230822180516.deb'
+unzip 'Omada_SDN_Controller_v5.12.6_Linux_x64.deb(Beta).zip'
 $STD dpkg -i omada_v5.12.6_linux_x64_20230822180516.deb
 echo "bash -c \"\$(wget -qLO - https://github.com/mainkowitsch/Proxmox/raw/main/ct/${app}.sh)\"" >/usr/bin/update
 chmod +x /usr/bin/update
