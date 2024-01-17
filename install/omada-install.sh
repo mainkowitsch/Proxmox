@@ -51,7 +51,7 @@ motd_ssh
 customize
 
 msg_info "Cleaning up"
-rm -rf omada_v5.13.30.4_linux_x64_20231229095759.deb Omada_SDN_Controller_v5.13.30.4_Linux_x64.deb(Beta).zip mongodb-org-server_3.6.23_amd64.deb zulu-repo_1.0.0-3_all.deb libssl1.1_1.1.1f-1ubuntu2.20_amd64.deb
+rm -rf omada_v5.13.30.4_linux_x64_20231229095759.deb 'Omada_SDN_Controller_v5.13.30.4_Linux_x64.deb(Beta).zip' mongodb-org-server_3.6.23_amd64.deb zulu-repo_1.0.0-3_all.deb libssl1.1_1.1.1f-1ubuntu2.20_amd64.deb
 $STD apt-get autoremove
 $STD apt-get autoclean
 msg_ok "Cleaned"
