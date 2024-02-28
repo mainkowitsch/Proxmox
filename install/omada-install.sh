@@ -40,9 +40,9 @@ latest_url=$(curl -fsSL "https://www.tp-link.com/us/support/download/omada-softw
 latest_version=$(basename "$latest_url" | sed -e 's/.*ller_//;s/_Li.*//')
 
 msg_info "Installing Omada Controller"
-wget -qL 'https://static.tp-link.com/upload/beta/2024/202401/20240109/Omada_SDN_Controller_v5.13.30.4_Linux_x64.deb(Beta).zip'
-unzip 'Omada_SDN_Controller_v5.13.30.4_Linux_x64.deb(Beta).zip'
-$STD dpkg -i omada_v5.13.30.4_linux_x64_20231229095759.deb
+wget -qL 'https://static.tp-link.com/upload/software/2024/202402/20240227/Omada_SDN_Controller_v5.13.30.8_linux_x64.deb'
+#unzip 'Omada_SDN_Controller_v5.13.30.4_Linux_x64.deb(Beta).zip'
+$STD dpkg -i Omada_SDN_Controller_v5.13.30.8_linux_x64.deb
 echo "bash -c \"\$(wget -qLO - https://github.com/mainkowitsch/Proxmox/raw/main/ct/${app}.sh)\"" >/usr/bin/update
 chmod +x /usr/bin/update
 msg_ok "Installed Omada Controller"
@@ -51,7 +51,7 @@ motd_ssh
 customize
 
 msg_info "Cleaning up"
-rm -rf omada_v5.13.30.4_linux_x64_20231229095759.deb 'Omada_SDN_Controller_v5.13.30.4_Linux_x64.deb(Beta).zip' mongodb-org-server_3.6.23_amd64.deb zulu-repo_1.0.0-3_all.deb libssl1.1_1.1.1f-1ubuntu2.20_amd64.deb
+rm -rf Omada_SDN_Controller_v5.13.30.8_linux_x64.deb mongodb-org-server_3.6.23_amd64.deb zulu-repo_1.0.0-3_all.deb libssl1.1_1.1.1f-1ubuntu2.20_amd64.deb
 $STD apt-get autoremove
 $STD apt-get autoclean
 msg_ok "Cleaned"
